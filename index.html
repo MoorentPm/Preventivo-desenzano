@@ -68,8 +68,23 @@
   .nav-link { color: #424844; font-size: .875rem; transition: color .2s; }
   .nav-link:hover { color: #163428; }
 
-  #mobile-menu { display: none; }
-  #mobile-menu.open { display: flex; }
+  #mobile-menu {
+    position: fixed; left: 0; right: 0; top: 64px; bottom: 0;
+    background: #fbf9f4;
+    opacity: 0; transform: translateY(-12px); visibility: hidden;
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    overflow-y: auto; z-index: 40;
+  }
+  @media (min-width: 768px) { #mobile-menu { top: 80px; } }
+  #mobile-menu.open { opacity: 1; transform: translateY(0); visibility: visible; }
+
+  .mobile-nav-link {
+    display: block; font-size: 1.0625rem; font-weight: 500; color: #1b1c19;
+    padding: 1.15rem 1.5rem; border-bottom: 1px solid rgba(114,121,116,.15);
+    transition: background .15s;
+  }
+  .mobile-nav-link:active { background: rgba(173,206,189,.25); }
+
   #burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   #burger.open span:nth-child(2) { opacity: 0; }
   #burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -116,18 +131,19 @@
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="lg:hidden flex-col bg-stone-50 px-5 pb-5 gap-4 shadow-md">
-    <a class="nav-link" href="#sicurezza">Tranquillità</a>
-    <a class="nav-link" href="#preventivo">Preventivo</a>
-    <a class="nav-link" href="#villa">La Villa</a>
-    <a class="nav-link" href="#residence">Green Residence</a>
-    <a class="nav-link" href="#golf">Golf</a>
-    <a class="nav-link" href="#contatti">Contatti</a>
-  </div>
 </nav>
+<div id="mobile-menu" class="lg:hidden flex flex-col">
+  <a class="mobile-nav-link" href="#sicurezza">Tranquillità</a>
+  <a class="mobile-nav-link" href="#preventivo">Preventivo</a>
+  <a class="mobile-nav-link" href="#villa">La Villa</a>
+  <a class="mobile-nav-link" href="#residence">Green Residence</a>
+  <a class="mobile-nav-link" href="#golf">Golf</a>
+  <a class="mobile-nav-link" href="#contatti">Contatti</a>
+  <a href="#preventivo" class="block mx-5 mt-5 bg-secondary text-white rounded-full px-5 py-3.5 text-sm font-semibold text-center">Vedi il preventivo</a>
+</div>
 
 <!-- Hero -->
-<header class="hero-bg relative text-white pt-32 md:pt-40 pb-24 md:pb-32 px-5 md:px-8 overflow-hidden">
+<header class="hero-bg relative text-white pt-24 sm:pt-32 md:pt-40 pb-14 sm:pb-24 md:pb-32 px-5 md:px-8 overflow-hidden">
   <div class="max-w-5xl mx-auto relative z-10">
     <span class="ribbon-badge inline-block px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase mb-6">Preventivo personalizzato</span>
     <h1 class="font-headline text-4xl md:text-6xl font-bold leading-tight mb-5">Villa Green Residence<br/><span class="text-tertiary-fixed">Desenzano del Garda</span></h1>
@@ -150,9 +166,9 @@
 </header>
 
 <!-- Tranquillità e Sicurezza -->
-<section id="sicurezza" class="py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
+<section id="sicurezza" class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-14">
+    <div class="text-center mb-10 md:mb-14">
       <span class="text-secondary font-semibold text-sm uppercase tracking-wide">La vostra priorità</span>
       <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Tranquillità e sicurezza, prima di tutto</h2>
       <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">Il Green Residence è pensato per chi vuole godersi il lago senza pensieri: accesso controllato, vigilanza costante e tutti i servizi a portata di mano, senza mai dover prendere la macchina.</p>
@@ -205,7 +221,7 @@
 </section>
 
 <!-- Preventivo -->
-<section id="preventivo" class="py-20 md:py-28 px-5 md:px-8 bg-primary relative overflow-hidden">
+<section id="preventivo" class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-primary relative overflow-hidden">
   <div class="max-w-4xl mx-auto relative z-10">
     <div class="text-center mb-12">
       <span class="text-tertiary-fixed font-semibold text-sm uppercase tracking-wide">Il vostro preventivo</span>
@@ -235,7 +251,7 @@
           <p class="font-headline text-4xl md:text-5xl font-bold text-primary">€ 7.481 <span class="text-xl font-semibold text-on-surface-variant">+ IVA</span></p>
           <p class="text-sm text-on-surface-variant mt-2">≈ € 325 a notte &middot; pulizie finali incluse</p>
         </div>
-        <a href="#contatti" class="bg-secondary text-white rounded-full px-8 py-3.5 text-sm font-semibold hover:opacity-90 transition-all duration-300 text-center whitespace-nowrap">
+        <a href="#contatti" class="w-full sm:w-auto bg-secondary text-white rounded-full px-8 py-3.5 text-sm font-semibold hover:opacity-90 transition-all duration-300 text-center whitespace-nowrap">
           Confermiamo la prenotazione
         </a>
       </div>
@@ -278,16 +294,16 @@
 </section>
 
 <!-- La Villa -->
-<section id="villa" class="py-20 md:py-28 px-5 md:px-8 bg-background">
+<section id="villa" class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-background">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-14">
+    <div class="text-center mb-10 md:mb-14">
       <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Il vostro alloggio</span>
       <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Una casa pensata per vivere all'aperto e al chiuso</h2>
       <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">L'ingresso della villetta porta direttamente al vostro angolo di relax privato: un ampio giardino attrezzato, ambienti luminosi e ogni comfort su tre livelli.</p>
     </div>
 
     <!-- Giardino -->
-    <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-start mb-10 md:mb-16">
       <div>
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary text-3xl">deck</span>
@@ -308,7 +324,7 @@
     </div>
 
     <!-- Piano Terra -->
-    <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-start mb-10 md:mb-16">
       <div class="md:order-2">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary text-3xl">living</span>
@@ -329,7 +345,7 @@
     </div>
 
     <!-- Piano Superiore -->
-    <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-start mb-10 md:mb-16">
       <div>
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary text-3xl">bed</span>
@@ -351,7 +367,7 @@
     </div>
 
     <!-- Taverna -->
-    <div class="grid md:grid-cols-2 gap-10 items-start">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
       <div class="md:order-2">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-secondary text-3xl">sports_esports</span>
@@ -374,9 +390,9 @@
 </section>
 
 <!-- Green Residence -->
-<section id="residence" class="py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
+<section id="residence" class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-14">
+    <div class="text-center mb-10 md:mb-14">
       <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Il vostro resort privato</span>
       <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Tutti i servizi del Green Residence</h2>
       <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">Accesso a servizi da hotel cinque stelle, con la privacy e l'autonomia della vostra casa. Tutto a pochi passi dalla villetta.</p>
@@ -432,9 +448,9 @@
 </section>
 
 <!-- Golf -->
-<section id="golf" class="py-20 md:py-28 px-5 md:px-8 bg-background">
+<section id="golf" class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-background">
   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-14">
+    <div class="text-center mb-10 md:mb-14">
       <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Per gli appassionati</span>
       <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Golf sul Lago di Garda</h2>
       <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">A soli 5-10 km dal Green Residence, due dei campi più rinomati d'Italia.</p>
@@ -461,9 +477,9 @@
 </section>
 
 <!-- Check-in -->
-<section class="py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
+<section class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
   <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-14">
+    <div class="text-center mb-10 md:mb-14">
       <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Il vostro arrivo</span>
       <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Check-in personalizzato</h2>
     </div>
@@ -487,11 +503,11 @@
 </section>
 
 <!-- Contatti -->
-<section id="contatti" class="py-20 md:py-28 px-5 md:px-8 bg-primary text-white">
+<section id="contatti" class="py-12 sm:py-20 md:py-28 px-5 md:px-8 bg-primary text-white">
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="font-headline text-3xl md:text-4xl font-bold mb-4">Confermiamo insieme il vostro soggiorno</h2>
     <p class="text-inverse-primary mb-10 leading-relaxed">Per qualsiasi domanda sul preventivo, sull'IVA o sulla fatturazione, siamo a vostra disposizione direttamente in privato.</p>
-    <a href="mailto:hello@moorentpm.it" class="bg-secondary text-white rounded-full px-8 py-4 text-base font-semibold hover:opacity-90 transition-all duration-300 inline-block">
+    <a href="mailto:hello@moorentpm.it" class="w-full sm:w-auto block sm:inline-block bg-secondary text-white rounded-full px-8 py-4 text-base font-semibold hover:opacity-90 transition-all duration-300">
       Scrivici a hello@moorentpm.it
     </a>
   </div>
