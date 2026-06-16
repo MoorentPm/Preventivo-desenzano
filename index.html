@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moorent Pm | Preventivo Villa Green Residence — Desenzano del Garda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "surface-container": "#f0eee9",
+          "outline": "#727974",
+          "surface-container-highest": "#e4e2dd",
+          "on-primary-fixed-variant": "#2f4d40",
+          "primary": "#163428",
+          "on-secondary-container": "#79542d",
+          "inverse-primary": "#adcebd",
+          "background": "#fbf9f4",
+          "tertiary-fixed-dim": "#e9c176",
+          "outline-variant": "#c1c8c3",
+          "on-secondary": "#ffffff",
+          "secondary-fixed": "#ffdcbd",
+          "on-primary-fixed": "#012116",
+          "on-surface-variant": "#424844",
+          "secondary": "#7c5730",
+          "on-tertiary-container": "#d3ad64",
+          "primary-fixed": "#c8ead8",
+          "surface-container-high": "#eae8e3",
+          "surface-container-lowest": "#ffffff",
+          "surface": "#fbf9f4",
+          "on-surface": "#1b1c19",
+          "tertiary": "#3e2b00",
+          "tertiary-fixed": "#ffdea5",
+          "on-background": "#1b1c19",
+          "primary-container": "#2d4b3e",
+          "surface-variant": "#e4e2dd",
+          "on-primary": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-primary-container": "#99baa9",
+          "surface-container-low": "#f5f3ee",
+          "surface-dim": "#dbdad5",
+          "primary-fixed-dim": "#adcebd",
+          "inverse-surface": "#30312e",
+          "on-tertiary-fixed": "#261900",
+          "surface-bright": "#fbf9f4",
+          "secondary-container": "#fdcb9b",
+        },
+        fontFamily: {
+          "headline": ["Noto Serif", "serif"],
+          "body": ["Inter", "sans-serif"],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-family: 'Material Symbols Outlined';
+    font-style: normal; display: inline-block; line-height: 1;
+    text-transform: none; letter-spacing: normal; white-space: nowrap;
+    direction: ltr; vertical-align: middle;
+  }
+  .nav-link { color: #424844; font-size: .875rem; transition: color .2s; }
+  .nav-link:hover { color: #163428; }
+
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+  #burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  #burger.open span:nth-child(2) { opacity: 0; }
+  #burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .card-lift { transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s ease; }
+  .card-lift:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(22,52,40,.12); }
+
+  .hero-bg {
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(173,206,189,.18) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(233,193,118,.16) 0%, transparent 50%),
+      linear-gradient(135deg, #0a1a12 0%, #163428 55%, #1f4434 100%);
+  }
+  .wave-divider { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+
+  .ribbon-badge {
+    background: linear-gradient(135deg, #e9c176 0%, #d3ad64 100%);
+    color: #3e2b00;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/90 backdrop-blur-md shadow-sm transition-shadow duration-300" id="main-nav">
+  <div class="flex justify-between items-center h-16 md:h-20 px-5 md:px-8 max-w-7xl mx-auto">
+    <span class="font-headline text-xl md:text-2xl font-bold text-primary tracking-tight">Moorent <span class="text-secondary">Pm</span></span>
+    <div class="hidden lg:flex items-center gap-7">
+      <a class="nav-link" href="#sicurezza">Tranquillità</a>
+      <a class="nav-link" href="#preventivo">Preventivo</a>
+      <a class="nav-link" href="#villa">La Villa</a>
+      <a class="nav-link" href="#residence">Green Residence</a>
+      <a class="nav-link" href="#golf">Golf</a>
+      <a class="nav-link" href="#contatti">Contatti</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#preventivo" class="hidden sm:block bg-secondary text-white rounded-full px-5 py-2 text-sm font-medium hover:opacity-90 transition-all duration-300">
+        Vedi il preventivo
+      </a>
+      <button id="burger" class="lg:hidden flex flex-col justify-center gap-[5px] w-8 h-8 cursor-pointer" aria-label="Menu">
+        <span class="block w-6 h-0.5 bg-primary transition-transform duration-300 origin-center"></span>
+        <span class="block w-6 h-0.5 bg-primary transition-opacity duration-300"></span>
+        <span class="block w-6 h-0.5 bg-primary transition-transform duration-300 origin-center"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden flex-col bg-stone-50 px-5 pb-5 gap-4 shadow-md">
+    <a class="nav-link" href="#sicurezza">Tranquillità</a>
+    <a class="nav-link" href="#preventivo">Preventivo</a>
+    <a class="nav-link" href="#villa">La Villa</a>
+    <a class="nav-link" href="#residence">Green Residence</a>
+    <a class="nav-link" href="#golf">Golf</a>
+    <a class="nav-link" href="#contatti">Contatti</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero-bg relative text-white pt-32 md:pt-40 pb-24 md:pb-32 px-5 md:px-8 overflow-hidden">
+  <div class="max-w-5xl mx-auto relative z-10">
+    <span class="ribbon-badge inline-block px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase mb-6">Preventivo personalizzato</span>
+    <h1 class="font-headline text-4xl md:text-6xl font-bold leading-tight mb-5">Villa Green Residence<br/><span class="text-tertiary-fixed">Desenzano del Garda</span></h1>
+    <p class="text-lg md:text-xl text-inverse-primary max-w-2xl leading-relaxed mb-10">A due minuti da Sirmione, nel cuore del Green Residence: piscine, ristorante, vigilanza 24 ore su 24 e tutta la tranquillità del Lago di Garda, a un passo da casa vostra.</p>
+    <div class="flex flex-wrap gap-4 md:gap-6">
+      <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-5 py-4">
+        <p class="text-xs text-inverse-primary uppercase tracking-wide mb-1">Periodo</p>
+        <p class="text-lg font-semibold">1 – 24 agosto</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-5 py-4">
+        <p class="text-xs text-inverse-primary uppercase tracking-wide mb-1">Durata</p>
+        <p class="text-lg font-semibold">23 notti</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-5 py-4">
+        <p class="text-xs text-inverse-primary uppercase tracking-wide mb-1">Capacità</p>
+        <p class="text-lg font-semibold">Fino a 8 persone</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Tranquillità e Sicurezza -->
+<section id="sicurezza" class="py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-secondary font-semibold text-sm uppercase tracking-wide">La vostra priorità</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Tranquillità e sicurezza, prima di tutto</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">Il Green Residence è pensato per chi vuole godersi il lago senza pensieri: accesso controllato, vigilanza costante e tutti i servizi a portata di mano, senza mai dover prendere la macchina.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary-container">support_agent</span>
+        </div>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Reception sempre presente</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Un punto di riferimento all'ingresso del residence per qualsiasi necessità durante tutto il soggiorno.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary-container">fence</span>
+        </div>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Ingresso controllato</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Accesso al residence tramite cancelli con sbarre automatiche: solo ospiti riconosciuti entrano nell'area.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary-container">shield</span>
+        </div>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Vigilanza 24 ore su 24</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Servizio di sicurezza attivo giorno e notte, con ronde regolari in tutta l'area del residence.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary-container">restaurant</span>
+        </div>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Ristorante interno</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Pizzeria e cucina gardesana a pochi passi da casa, con terrazza vista piscina e menù anche per i più piccoli.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary-container">local_bar</span>
+        </div>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Bar piscina e bar centrale</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Colazioni, aperitivi e snack senza muoversi dal residence, in qualsiasi momento della giornata.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-on-primary-container">pool</span>
+        </div>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Tre piscine custodite</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Aperte ogni giorno dalle 8:30 alle 19:30, con manutenzione costante e massima sicurezza per tutte le età.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Preventivo -->
+<section id="preventivo" class="py-20 md:py-28 px-5 md:px-8 bg-primary relative overflow-hidden">
+  <div class="max-w-4xl mx-auto relative z-10">
+    <div class="text-center mb-12">
+      <span class="text-tertiary-fixed font-semibold text-sm uppercase tracking-wide">Il vostro preventivo</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-white mt-2">Soggiorno al completo, senza pensieri</h2>
+    </div>
+    <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+      <div class="flex flex-col md:flex-row justify-between gap-8 mb-8 pb-8 border-b border-outline-variant/50">
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-wide mb-1">Struttura</p>
+          <p class="font-headline text-xl font-bold text-primary">Villa Green Residence, Desenzano del Garda</p>
+        </div>
+        <div class="flex gap-8">
+          <div>
+            <p class="text-xs text-on-surface-variant uppercase tracking-wide mb-1">Periodo</p>
+            <p class="font-semibold text-on-surface">1 – 24 agosto</p>
+          </div>
+          <div>
+            <p class="text-xs text-on-surface-variant uppercase tracking-wide mb-1">Notti</p>
+            <p class="font-semibold text-on-surface">23</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <p class="text-sm text-on-surface-variant mb-1">Totale soggiorno</p>
+          <p class="font-headline text-4xl md:text-5xl font-bold text-primary">€ 7.481 <span class="text-xl font-semibold text-on-surface-variant">+ IVA</span></p>
+          <p class="text-sm text-on-surface-variant mt-2">≈ € 325 a notte &middot; pulizie finali incluse</p>
+        </div>
+        <a href="#contatti" class="bg-secondary text-white rounded-full px-8 py-3.5 text-sm font-semibold hover:opacity-90 transition-all duration-300 text-center whitespace-nowrap">
+          Confermiamo la prenotazione
+        </a>
+      </div>
+
+      <p class="text-xs text-on-surface-variant italic mb-8">Per informazioni sull'IVA e sulla fatturazione siamo a disposizione: contattateci direttamente in privato per ogni dettaglio.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface"><span class="font-semibold">Check-in personalizzato</span> con tour completo del residence e dell'alloggio</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface"><span class="font-semibold">Braccialetti d'accesso</span> per ingresso al residence e all'area piscine</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface"><span class="font-semibold">Pulizie finali incluse</span> nel prezzo del soggiorno</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface"><span class="font-semibold">Cucina completamente attrezzata</span> per 8 persone, set completo incluso</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface"><span class="font-semibold">Accesso libero</span> a tutte e tre le piscine del residence</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
+          <p class="text-sm text-on-surface"><span class="font-semibold">Vigilanza 24/24</span> e reception per tutta la durata del soggiorno</p>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-outline-variant/50 flex items-center gap-3 text-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-secondary">groups</span>
+        <p>Capacità massima: <span class="font-semibold text-on-surface">6 adulti + 2 bambini</span> (8 persone totali) &middot; massimo 6 adulti consentiti. I braccialetti sono richiesti solo per gli adulti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- La Villa -->
+<section id="villa" class="py-20 md:py-28 px-5 md:px-8 bg-background">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Il vostro alloggio</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Una casa pensata per vivere all'aperto e al chiuso</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">L'ingresso della villetta porta direttamente al vostro angolo di relax privato: un ampio giardino attrezzato, ambienti luminosi e ogni comfort su tre livelli.</p>
+    </div>
+
+    <!-- Giardino -->
+    <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">deck</span>
+          <h3 class="font-headline text-2xl font-bold text-primary">Il giardino privato</h3>
+        </div>
+        <p class="text-on-surface-variant leading-relaxed mb-4">L'ampio porticato moderno crea un'area ombreggiata con tutto ciò che serve per vivere all'aperto dall'alba al tramonto. Il grande tavolo da pranzo circondato da comode sedie bianche è perfetto per i pasti protetti dal sole; la sera l'illuminazione integrata trasforma lo spazio in un ambiente intimo.</p>
+        <p class="text-on-surface-variant leading-relaxed">La vera sorpresa è la mini-cucina esterna attrezzata, con lavastoviglie protetta in un elegante mobiletto: si può preparare, servire e riordinare un'intera cena per otto persone direttamente fuori. Sotto il porticato trovate anche un salottino lounge con divano e poltrone, ideale per gli aperitivi al tramonto.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-2xl p-6">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">outdoor_grill</span><span class="text-sm text-on-surface-variant">Barbecue grill per grigliate elaborate, vicino alla mini-cucina esterna</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">kitchen</span><span class="text-sm text-on-surface-variant">Mini-cucina esterna con lavello e lavastoviglie</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">weekend</span><span class="text-sm text-on-surface-variant">Lettini prendisole e salottino lounge con divano e poltrone</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">sports_tennis</span><span class="text-sm text-on-surface-variant">Tavolo da ping pong per le sfide pomeridiane</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">grass</span><span class="text-sm text-on-surface-variant">Prato curato e spazioso, con privacy naturale data dalla vegetazione perimetrale</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Piano Terra -->
+    <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+      <div class="md:order-2">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">living</span>
+          <h3 class="font-headline text-2xl font-bold text-primary">Piano terra — l'open space</h3>
+        </div>
+        <p class="text-on-surface-variant leading-relaxed mb-4">Soggiorno, zona pranzo e cucina dialogano in un ambiente luminoso che conquista al primo sguardo. Il grande divano è orientato verso la Smart TV da 55" e le ampie vetrate che incorniciano il giardino. L'elemento che cattura l'attenzione è il caminetto design circolare centrale, visibile a 360° da ogni angolo del soggiorno: nelle serate più fresche crea un'atmosfera calda e avvolgente.</p>
+        <p class="text-on-surface-variant leading-relaxed">Il tavolo in vetro temperato accoglie comodamente otto commensali. La cucina, completamente attrezzata, si sviluppa lungo una parete in finitura antracite con isola centrale e sgabelli per la colazione veloce. Al piano terra trovate anche un bagno di cortesia, particolarmente comodo durante le giornate in giardino, e la scaletta a chiocciola che collega i piani.</p>
+      </div>
+      <div class="md:order-1 bg-surface-container-low rounded-2xl p-6">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">tv</span><span class="text-sm text-on-surface-variant">Smart TV 55" e caminetto design circolare panoramico</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">countertops</span><span class="text-sm text-on-surface-variant">Cucina con piano cottura a gas, forno ventilato, frigo-freezer, microonde con grill, lavastoviglie, macchina del caffè e bollitore</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">restaurant_menu</span><span class="text-sm text-on-surface-variant">Set completo per 8 persone: pentole, padelle, piatti, bicchieri, posate, taglieri, teglie</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">wc</span><span class="text-sm text-on-surface-variant">Bagno di cortesia al piano terra</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">stairs</span><span class="text-sm text-on-surface-variant">Scala a chiocciola in legno e metallo verso il piano superiore</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Piano Superiore -->
+    <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">bed</span>
+          <h3 class="font-headline text-2xl font-bold text-primary">Piano superiore — la zona notte</h3>
+        </div>
+        <p class="text-on-surface-variant leading-relaxed mb-4"><span class="font-semibold text-on-surface">Prima camera matrimoniale:</span> luminosa, con letto queen size, comodini sospesi con lampade orientabili e un <span class="font-semibold text-on-surface">terrazzino privato</span> accessibile direttamente dalla stanza. Climatizzatore silenzioso, Smart TV 32", tende oscuranti e doppi vetri.</p>
+        <p class="text-on-surface-variant leading-relaxed mb-4"><span class="font-semibold text-on-surface">Seconda camera matrimoniale:</span> estetica elegante e classica, testiera imbottita, armadio capiente. Stesse dotazioni: Smart TV 32", climatizzatore silenzioso, tende oscuranti.</p>
+        <p class="text-on-surface-variant leading-relaxed"><span class="font-semibold text-on-surface">Terza camera:</span> colorata e versatile, con divano letto matrimoniale — adatta a due adulti, due ragazzi o fino a due bambini. Climatizzatore e illuminazione LED.</p>
+      </div>
+      <div class="bg-surface-container-low rounded-2xl p-6">
+        <h4 class="font-headline font-bold text-primary mb-3">Il bagno principale</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">shower</span><span class="text-sm text-on-surface-variant">Box doccia spazioso con parete decorativa botanica e piatto antiscivolo</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">water_drop</span><span class="text-sm text-on-surface-variant">Soffione ampio e doccino estraibile</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">wc</span><span class="text-sm text-on-surface-variant">WC e bidet in ceramica bianca, linea moderna</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">design_services</span><span class="text-sm text-on-surface-variant">Specchio rotondo XXL e mensole color verde salvia</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Taverna -->
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div class="md:order-2">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-secondary text-3xl">sports_esports</span>
+          <h3 class="font-headline text-2xl font-bold text-primary">La taverna — il piano del divertimento</h3>
+        </div>
+        <p class="text-on-surface-variant leading-relaxed mb-4">Al piano seminterrato, fresco d'estate, un intero spazio dedicato allo svago: calcio balilla professionale, un divano orientato verso una Smart TV da 43" e un secondo ambiente separabile con porta scorrevole, dotato di armadio e divano che all'occorrenza diventa letto aggiuntivo (capacità complessiva: 8 persone totali).</p>
+        <p class="text-on-surface-variant leading-relaxed">Il bagno-lavanderia è spazioso e a doppia funzione: box doccia, WC, bidet e lavabo da un lato; lavatrice, asciugatrice a pompa di calore, asse da stiro professionale e stendino a muro dall'altro — ideale per soggiorni lunghi e famiglie, senza pensieri per il bucato.</p>
+      </div>
+      <div class="md:order-1 bg-surface-container-low rounded-2xl p-6">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">sports_esports</span><span class="text-sm text-on-surface-variant">Calcio balilla professionale</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">tv</span><span class="text-sm text-on-surface-variant">Smart TV 43" con divano</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">bed</span><span class="text-sm text-on-surface-variant">Divano letto aggiuntivo per bambini</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">local_laundry_service</span><span class="text-sm text-on-surface-variant">Zona lavanderia completa: lavatrice, asciugatrice, asse da stiro</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-xl">shower</span><span class="text-sm text-on-surface-variant">Bagno con box doccia, WC e bidet</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Green Residence -->
+<section id="residence" class="py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Il vostro resort privato</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Tutti i servizi del Green Residence</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">Accesso a servizi da hotel cinque stelle, con la privacy e l'autonomia della vostra casa. Tutto a pochi passi dalla villetta.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">pool</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Tre piscine</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">La principale, la più grande, con profondità variabile e area bambini; le altre due più tranquille e raccolte. Aperte dalle 8:30 alle 19:30.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">restaurant</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Ristorante-pizzeria</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Cucina gardesana, forno a legna, terrazza vista piscina e menù bambini, proprio accanto alla piscina principale.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">local_bar</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Bar piscina e bar centrale</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Colazioni, aperitivi e snack per tutta la giornata, senza muoversi dal residence.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">sports_tennis</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Tennis e calcetto</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Campo da tennis regolamentare e campo da calcetto in erba sintetica con illuminazione per le partite serali.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">child_care</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Parchi gioco</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Distribuiti ogni 200 metri nel verde del residence, sicuri, curati e ombreggiati per ogni età.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">theater_comedy</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Anfiteatro</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">In estate: cinema all'aperto, spettacoli cabaret, concerti live e spettacoli per bambini, con programma settimanale via email.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">support_agent</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Reception</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Sempre disponibile per qualsiasi necessità durante il soggiorno.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">shield</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Vigilanza H24</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Sicurezza attiva giorno e notte con ronde regolari in tutta l'area del residence.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-3 block">recycling</span>
+        <h3 class="font-headline text-lg font-bold text-primary mb-2">Raccolta differenziata</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Servizio organizzato all'interno del residence per il massimo comfort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Golf -->
+<section id="golf" class="py-20 md:py-28 px-5 md:px-8 bg-background">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Per gli appassionati</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Golf sul Lago di Garda</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">A soli 5-10 km dal Green Residence, due dei campi più rinomati d'Italia.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card-lift bg-surface-container-low rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-secondary text-3xl">golf_course</span>
+          <h3 class="font-headline text-xl font-bold text-primary">Garda Golf Country Club</h3>
+        </div>
+        <p class="text-sm text-secondary font-semibold mb-3">9 km dal residence</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">27 buche, tra i migliori campi del paese: ha ospitato tre edizioni dell'Open d'Italia, immerso in un paesaggio tra lago e colline.</p>
+      </div>
+      <div class="card-lift bg-surface-container-low rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-secondary text-3xl">golf_course</span>
+          <h3 class="font-headline text-xl font-bold text-primary">Chervò Golf San Vigilio</h3>
+        </div>
+        <p class="text-sm text-secondary font-semibold mb-3">7 km dal residence</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">36 buche totali (27 championship + 9 executive). Club House premiata come "Più bella Club House d'Italia", tra Desenzano e Sirmione.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Check-in -->
+<section class="py-20 md:py-28 px-5 md:px-8 bg-surface-container-low">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-secondary font-semibold text-sm uppercase tracking-wide">Il vostro arrivo</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-2">Check-in personalizzato</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-outline-variant/40">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-secondary text-2xl">event_available</span>
+          <h3 class="font-headline text-lg font-bold text-primary">Accoglienza dedicata</h3>
+        </div>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Un membro del nostro team vi accoglie personalmente: un tour completo del Green Residence (piscine, campi sportivi, parchi giochi) e di ogni dettaglio della villetta — elettrodomestici, climatizzazione, cucina esterna, illuminazione. Tutte le vostre domande trovano risposta, con consigli pratici per vivere al meglio ogni spazio.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-outline-variant/40">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-secondary text-2xl">badge</span>
+          <h3 class="font-headline text-lg font-bold text-primary">Braccialetti d'accesso</h3>
+        </div>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Consegnati al check-in, da indossare per tutta la durata del soggiorno: servono per accedere al residence dai cancelli principali, entrare nell'area piscine ed essere riconosciuti come ospiti della struttura. Richiesti solo per gli adulti — i bambini accedono liberamente con voi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contatti -->
+<section id="contatti" class="py-20 md:py-28 px-5 md:px-8 bg-primary text-white">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-headline text-3xl md:text-4xl font-bold mb-4">Confermiamo insieme il vostro soggiorno</h2>
+    <p class="text-inverse-primary mb-10 leading-relaxed">Per qualsiasi domanda sul preventivo, sull'IVA o sulla fatturazione, siamo a vostra disposizione direttamente in privato.</p>
+    <a href="mailto:hello@moorentpm.it" class="bg-secondary text-white rounded-full px-8 py-4 text-base font-semibold hover:opacity-90 transition-all duration-300 inline-block">
+      Scrivici a hello@moorentpm.it
+    </a>
+  </div>
+</section>
+
+<footer class="py-8 px-5 md:px-8 bg-on-background text-center">
+  <p class="text-sm text-stone-400">Moorent Pm &middot; Preventivo Villa Green Residence, Desenzano del Garda</p>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+</script>
+</body>
+</html>
